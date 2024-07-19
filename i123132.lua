@@ -532,7 +532,7 @@ Tab:AddButton(
     {
         Name = "Mahoraga",
         Callback = function()
-            local ohString1 = "Six Eyes"
+            local ohString1 = "Ten Shadows"
 
             workspace[playerName]["Change Character"].ChangeCharacter:FireServer(ohString1)
 
