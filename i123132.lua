@@ -928,14 +928,6 @@ Tab:AddButton(
         end
     }
 )
-Tab:AddButton(
-    {
-        Name = "Mahito Domain Expansion",
-        Callback = function()
-            game:GetService("ReplicatedStorage").MahitoDomainExpansion.MahitoDomainEvent:FireServer()
-        end
-    }
-)
 
 local Tab =
     Window:MakeTab(
