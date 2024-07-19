@@ -691,6 +691,15 @@ Tab:AddButton(
 
 Tab:AddButton(
     {
+        Name = "Inject Infinity Yield",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
         Name = "Anti Slow",
         Callback = function()
             repeat
