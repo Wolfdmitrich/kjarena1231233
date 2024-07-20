@@ -1045,6 +1045,69 @@ Tab:AddButton(
     }
 )
 
+Tab:AddButton(
+    {
+        Name = "Fire Bomb (King)",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.RequiresHandle = false
+            tool.Name = "Fire Bomb"
+
+            local function onActivated()
+                for i = 1, 15 do
+                    game:GetService("Players").LocalPlayer.Backpack["Fire Bullet"].aka.Event:FireServer()
+                end
+            end
+
+            tool.Activated:Connect(onActivated)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "The Strongest Kick",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.RequiresHandle = false
+            tool.Name = "The Strongest Kick"
+
+            local function onActivated()
+                for i = 1, 10 do
+                    game:GetService("ReplicatedStorage").KJSwift.Remotes["Sweep Swift"]:FireServer()
+                end
+            end
+
+            tool.Activated:Connect(onActivated)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "The Strongest Ruin",
+        Callback = function()
+            local tool = Instance.new("Tool")
+            tool.RequiresHandle = false
+            tool.Name = "The Strongest Ruin"
+
+            local function onActivated()
+                for i = 1, 10 do
+                    game:GetService("ReplicatedStorage").Kj.Remotes["Collaretal Ruin"]:FireServer()
+                end
+            end
+
+            tool.Activated:Connect(onActivated)
+
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    }
+)
+
 local Tab =
     Window:MakeTab(
     {
