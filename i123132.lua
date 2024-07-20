@@ -505,12 +505,20 @@ Tab:AddButton(
         end
     }
 )
+local lastPressTime = 0
+
 Tab:AddButton(
     {
         Name = "Powerful Toad",
         Callback = function()
-            for i = 1, 15 do
-                game:GetService("ReplicatedStorage").megumi.Remotes.toad:FireServer()
+            local currentTime = tick() -- Получаем текущее время
+            if currentTime - lastPressTime >= 0.25 then -- Проверяем, прошло ли 250 миллисекунд
+                lastPressTime = currentTime -- Обновляем время последнего нажатия
+                for i = 1, 15 do
+                    game:GetService("ReplicatedStorage").megumi.Remotes.toad:FireServer()
+                end
+            else
+                print("Please wait before pressing again.")
             end
         end
     }
