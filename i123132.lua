@@ -1048,6 +1048,63 @@ Tab:AddButton(
 local Tab =
     Window:MakeTab(
     {
+        Name = "Server",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Rejoin",
+        Callback = function()
+            -- Script для повторного присоединения локального игрока к текущему серверу в Roblox
+
+            -- Получаем объект TeleportService
+            local TeleportService = game:GetService("TeleportService")
+
+            -- ID текущего плейса
+            local placeId = game.PlaceId
+
+            -- Функция для повторного присоединения к текущему серверу
+            local function rejoinServer()
+                -- Перемещаем игрока на текущий placeId
+                TeleportService:Teleport(placeId)
+            end
+
+            -- Ждем, когда локальный игрок загрузится
+            game.Players.PlayerAdded:Connect(
+                function(player)
+                    -- Повторное присоединение локального игрока
+                    if player == game.Players.LocalPlayer then
+                        rejoinServer()
+                    end
+                end
+            )
+
+            -- Для безопасности проверяем также текущего локального игрока
+            if game.Players.LocalPlayer then
+                rejoinServer()
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Serverhop",
+        Callback = function()
+            local module =
+                loadstring(game:HttpGet "https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+            module:Teleport(game.PlaceId)
+        end
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
         Name = "Creators",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
