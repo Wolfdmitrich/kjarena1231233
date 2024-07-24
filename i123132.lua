@@ -1174,7 +1174,10 @@ local Tab =
     }
 )
 
-Tab:AddParagraph("Wolfdmitrich", "The main creator of this script. Did a lot of different functions and scripts")
+Tab:AddParagraph(
+    "??? (Nickname hidden)",
+    "The main creator of this script. Did a lot of different functions and scripts"
+)
 Tab:AddParagraph("MEGACOCONUT", "Helped me to do script")
 
 local function AntiKick()
@@ -1214,7 +1217,7 @@ DS()
 OrionLib:MakeNotification(
     {
         Name = "Budgie Hub",
-        Content = "Creators – MEGACOCONUT (official) and Wolfdmitrich (official)",
+        Content = "Creators – MEGACOCONUT (official) and ??? (Nickname hidden)",
         Image = "rbxassetid://4483345998",
         Time = 10
     }
